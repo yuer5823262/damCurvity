@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.damcurvity.dao.BaseProjectMonitorTypeDao">
+
+    <resultMap type="com.example.damcurvity.entity.BaseProjectMonitorType" id="BaseProjectMonitorTypeMap">
+        <result property="id" column="id" jdbcType="INTEGER"/>
+        <result property="name" column="name" jdbcType="VARCHAR"/>
+        <result property="monitorType" column="monitor_type" jdbcType="VARCHAR"/>
+        <result property="equipmentType" column="equipment_type" jdbcType="VARCHAR"/>
+        <result property="transAttr" column="trans_attr" jdbcType="VARCHAR"/>
+        <result property="equation" column="equation" jdbcType="VARCHAR"/>
+        <result property="remark" column="remark" jdbcType="VARCHAR"/>
+        <result property="createTime" column="create_time" jdbcType="VARCHAR"/>
+        <result property="operator" column="operator" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <!-- 批量插入 -->
+    <insert id="insertBatch" keyProperty="id" useGeneratedKeys="true">
+        insert into damcurvitydb.base_project_monitor_type(name, monitor_type, equipment_type, trans_attr, equation, remark, create_time, operator)
+        values
+        <foreach collection="entities" item="entity" separator=",">
+        (#{entity.name}, #{entity.monitorType}, #{entity.equipmentType}, #{entity.transAttr}, #{entity.equation}, #{entity.remark}, #{entity.createTime}, #{entity.operator})
+        </foreach>
+    </insert>
+    <!-- 批量插入或按主键更新 -->
+    <insert id="insertOrUpdateBatch" keyProperty="id" useGeneratedKeys="true">
+        insert into damcurvitydb.base_project_monitor_type(name, monitor_type, equipment_type, trans_attr, equation, remark, create_time, operator)
+        values
+        <foreach collection="entities" item="entity" separator=",">
+            (#{entity.name}, #{entity.monitorType}, #{entity.equipmentType}, #{entity.transAttr}, #{entity.equation}, #{entity.remark}, #{entity.createTime}, #{entity.operator})
+        </foreach>
+        on duplicate key update
+         name = values(name) , monitor_type = values(monitor_type) , equipment_type = values(equipment_type) , trans_attr = values(trans_attr) , equation = values(equation) , remark = values(remark) , create_time = values(create_time) , operator = values(operator)     </insert>
+
+</mapper>
+

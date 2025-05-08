@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.damcurvity.dao.UserLogDao">
+
+    <resultMap type="com.example.damcurvity.entity.UserLog" id="UserLogMap">
+        <result property="id" column="id" jdbcType="INTEGER"/>
+        <result property="operator" column="operator" jdbcType="VARCHAR"/>
+        <result property="type" column="type" jdbcType="VARCHAR"/>
+        <result property="time" column="time" jdbcType="VARCHAR"/>
+        <result property="ipAddr" column="ip_addr" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <!-- 批量插入 -->
+    <insert id="insertBatch" keyProperty="id" useGeneratedKeys="true">
+        insert into damcurvitydb.user_log(operator, type, time, ip_addr)
+        values
+        <foreach collection="entities" item="entity" separator=",">
+        (#{entity.operator}, #{entity.type}, #{entity.time}, #{entity.ipAddr})
+        </foreach>
+    </insert>
+    <!-- 批量插入或按主键更新 -->
+    <insert id="insertOrUpdateBatch" keyProperty="id" useGeneratedKeys="true">
+        insert into damcurvitydb.user_log(operator, type, time, ip_addr)
+        values
+        <foreach collection="entities" item="entity" separator=",">
+            (#{entity.operator}, #{entity.type}, #{entity.time}, #{entity.ipAddr})
+        </foreach>
+        on duplicate key update
+         operator = values(operator) , type = values(type) , time = values(time) , ip_addr = values(ip_addr)     </insert>
+
+</mapper>
+

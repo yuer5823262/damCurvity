@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="fatal">
+    <Properties>
+        <Propertity name="baseDir" value="C:\Users\91036\IdeaProjects\damCurvity" />
+    </Properties>
+
+    <Appenders>
+        <Console name="Console" target="SYSTEM_OUT">
+            <ThresholdFilter level="info"  onMatch="ACCEPT"
+                onMismatch="DENY"/>
+            <PatternLayout
+            pattern="[%d{yyyy-MM-dd HH:mm:ss.SSS}] [%level] [%logger{36}] - %msg%n"
+            />
+        </Console>
+        <RollingFile name="debug_appender" fileName="logs/debug.log"
+            filePattern="logs/debug_%i.log.%d{yyyy-MM-dd}">
+
+            <Filters>
+                <ThresholdFilter level="debug" />
+                <ThresholdFilter level="info"  onMatch="DENY" onMismatch="NEUTRAL" />
+            </Filters>
+
+            <PatternLayout pattern="[%d{yyyy-MM-dd HH:mm:ss.SSS}] [%level] [%logger{36}] - %msg%n" />
+
+            <Policies>
+                <TimeBasedTriggerPolicy interval="1" modulate="true" />
+                <SizeBasedTriggeringPolicy size="100 MB" />
+            </Policies>
+        </RollingFile>
+
+        <RollingFile name="info_appender" fileName="logs/info.log"
+                     filePattern="logs/info_%i.log.%d{yyyy-MM-dd}">
+
+            <Filters>
+                <ThresholdFilter level="info" />
+                <ThresholdFilter level="error"  onMatch="DENY" onMismatch="NEUTRAL" />
+            </Filters>
+
+            <PatternLayout pattern="[%d{yyyy-MM-dd HH:mm:ss.SSS}] [%level] [%logger{36}] - %msg%n" />
+
+            <Policies>
+                <TimeBasedTriggerPolicy interval="1" modulate="true" />
+                <SizeBasedTriggeringPolicy size="100 MB" />
+            </Policies>
+        </RollingFile>
+
+        <RollingFile name="CONSTANT_INFO" fileName="logs/constant_info.log"
+                     filePattern="logs/constant_info_%i.log.%d{yyyy-MM-dd}">
+            <Filters>
+                <ThresholdFilter level="info" />
+                <ThresholdFilter level="error"  onMatch="DENY" onMismatch="NEUTRAL" />
+            </Filters>
+            <PatternLayout pattern="[%d{yyyy-MM-dd HH:mm:ss.SSS}] [%level] [%logger{36}] - %msg%n" />
+            <Policies>
+                <TimeBasedTriggerPolicy interval="1" modulate="true" />
+                <SizeBasedTriggeringPolicy size="100 MB" />
+            </Policies>
+        </RollingFile>
+
+
+        <RollingFile name="CONSTANT_ERROR" fileName="logs/constant_error.log"
+                     filePattern="logs/constant_error_%i.log.%d{yyyy-MM-dd}">
+            <Filters>
+                <ThresholdFilter level="error" />
+            </Filters>
+            <PatternLayout pattern="[%d{yyyy-MM-dd HH:mm:ss.SSS}] [%level] [%logger{36}] - %msg%n" />
+            <Policies>
+                <TimeBasedTriggerPolicy interval="1" modulate="true" />
+                <SizeBasedTriggeringPolicy size="100 MB" />
+            </Policies>
+        </RollingFile>
+
+        <RollingFile name="error_appender" fileName="logs/error.log"
+                     filePattern="logs/error_%i.log.%d{yyyy-MM-dd}">
+
+            <Filters>
+                <ThresholdFilter level="error" />
+            </Filters>
+
+            <PatternLayout pattern="[%d{yyyy-MM-dd HH:mm:ss.SSS}] [%level] [%logger{36}] - %msg%n" />
+
+            <Policies>
+                <TimeBasedTriggerPolicy interval="1" modulate="true" />
+                <SizeBasedTriggeringPolicy size="100 MB" />
+            </Policies>
+        </RollingFile>
+    </Appenders>
+
+    <Loggers>
+        <Root level="debug">
+            <AppenderRef ref="Console" />
+            <AppenderRef ref="debug_appender" />
+            <AppenderRef ref="info_appender" />
+            <AppenderRef ref="error_appender" />
+        </Root>
+        <logger name="com.example.dampouring.model.dao" level="info" additivity="false">
+            <appender-ref ref="consolePrint"/>
+        </logger>
+        <Logger name="constant" level="all" additivity="false">
+            <Appender-ref ref="CONSTANT_INFO"/>
+            <Appender-ref ref="CONSTANT_ERROR"/>
+        </Logger>
+        <logger name="jdbc.sqlonly" level="OFF"></logger>
+    </Loggers>
+</Configuration>

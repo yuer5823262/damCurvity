@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.damcurvity.dao.AnomalyCorrectionDao">
+
+    <resultMap type="com.example.damcurvity.entity.AnomalyCorrection" id="AnomalyCorrectionMap">
+        <result property="id" column="id" jdbcType="INTEGER"/>
+        <result property="nodeId" column="node_id" jdbcType="INTEGER"/>
+        <result property="stationId" column="station_id" jdbcType="INTEGER"/>
+        <result property="startTime" column="start_time" jdbcType="TIMESTAMP"/>
+        <result property="endTime" column="end_time" jdbcType="TIMESTAMP"/>
+        <result property="correctionTime" column="correction_time" jdbcType="TIMESTAMP"/>
+        <result property="createTime" column="create_time" jdbcType="VARCHAR"/>
+        <result property="operator" column="operator" jdbcType="VARCHAR"/>
+        <result property="xVal" column="x_val" jdbcType="NUMERIC"/>
+        <result property="yVal" column="y_val" jdbcType="NUMERIC"/>
+        <result property="zVal" column="z_val" jdbcType="NUMERIC"/>
+        <result property="xAcc" column="x_acc" jdbcType="NUMERIC"/>
+        <result property="yAcc" column="y_acc" jdbcType="NUMERIC"/>
+        <result property="zAcc" column="z_acc" jdbcType="NUMERIC"/>
+    </resultMap>
+
+    <!-- 批量插入 -->
+    <insert id="insertBatch" keyProperty="id" useGeneratedKeys="true">
+        insert into damcurvitydb.anomaly_correction(node_id, station_id, start_time, end_time, correction_time,
+        create_time, operator, x_val, y_val, z_val, x_acc, y_acc, z_acc)
+        values
+        <foreach collection="entities" item="entity" separator=",">
+            (#{entity.nodeId}, #{entity.stationId}, #{entity.startTime}, #{entity.endTime}, #{entity.correctionTime},
+            #{entity.createTime}, #{entity.operator}, #{entity.xVal}, #{entity.yVal}, #{entity.zVal}, #{entity.xAcc},
+            #{entity.yAcc}, #{entity.zAcc})
+        </foreach>
+    </insert>
+    <!-- 批量插入或按主键更新 -->
+    <insert id="insertOrUpdateBatch" keyProperty="id" useGeneratedKeys="true">
+        insert into damcurvitydb.anomaly_correction(node_id, station_id, start_time, end_time, correction_time,
+        create_time, operator, x_val, y_val, z_val, x_acc, y_acc, z_acc)
+        values
+        <foreach collection="entities" item="entity" separator=",">
+            (#{entity.nodeId}, #{entity.stationId}, #{entity.startTime}, #{entity.endTime}, #{entity.correctionTime},
+            #{entity.createTime}, #{entity.operator}, #{entity.xVal}, #{entity.yVal}, #{entity.zVal}, #{entity.xAcc},
+            #{entity.yAcc}, #{entity.zAcc})
+        </foreach>
+        on duplicate key update
+        node_id = values(node_id) , station_id = values(station_id) , start_time = values(start_time) , end_time =
+        values(end_time) , correction_time = values(correction_time) , create_time = values(create_time) , operator =
+        values(operator) , x_val = values(x_val) , y_val = values(y_val) , z_val = values(z_val) , x_acc = values(x_acc)
+        , y_acc = values(y_acc) , z_acc = values(z_acc)
+    </insert>
+
+</mapper>
+

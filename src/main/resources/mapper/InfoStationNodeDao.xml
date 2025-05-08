@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.damcurvity.dao.InfoStationNodeDao">
+
+    <resultMap type="com.example.damcurvity.entity.InfoStationNode" id="InfoStationNodeMap">
+        <result property="id" column="id" jdbcType="INTEGER"/>
+        <result property="nodeId" column="node_id" jdbcType="INTEGER"/>
+        <result property="stationId" column="station_id" jdbcType="INTEGER"/>
+        <result property="time" column="time" jdbcType="TIMESTAMP"/>
+        <result property="xVal" column="x_val" jdbcType="NUMERIC"/>
+        <result property="yVal" column="y_val" jdbcType="NUMERIC"/>
+        <result property="zVal" column="z_val" jdbcType="NUMERIC"/>
+        <result property="xAcc" column="x_acc" jdbcType="NUMERIC"/>
+        <result property="yAcc" column="y_acc" jdbcType="NUMERIC"/>
+        <result property="zAcc" column="z_acc" jdbcType="NUMERIC"/>
+        <result property="voltage" column="voltage" jdbcType="NUMERIC"/>
+        <result property="temp" column="temp" jdbcType="NUMERIC"/>
+        <result property="angle" column="angle" jdbcType="NUMERIC"/>
+        <result property="state" column="state" jdbcType="INTEGER"/>
+        <result property="mark" column="mark" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <!-- 批量插入 -->
+    <insert id="insertBatch" keyProperty="id" useGeneratedKeys="true">
+        insert into damcurvitydb.info_station_node(node_id,station_id, time, x_val, y_val, z_val, x_acc, y_acc, z_acc, voltage, temp, angle, state, mark)
+        values
+        <foreach collection="entities" item="entity" separator=",">
+        (#{entity.nodeId}, #{entity.stationId}, #{entity.time}, #{entity.xVal}, #{entity.yVal}, #{entity.zVal}, #{entity.xAcc}, #{entity.yAcc}, #{entity.zAcc}, #{entity.voltage}, #{entity.temp}, #{entity.angle}, #{entity.state}, #{entity.mark})
+        </foreach>
+    </insert>
+    <!-- 批量插入或按主键更新 -->
+    <insert id="insertOrUpdateBatch" keyProperty="id" useGeneratedKeys="true">
+        insert into damcurvitydb.info_station_node(node_id, time, x_val, y_val, z_val, x_acc, y_acc, z_acc, voltage, temp, angle, state, mark)
+        values
+        <foreach collection="entities" item="entity" separator=",">
+            (#{entity.nodeId}, #{entity.time}, #{entity.xVal}, #{entity.yVal}, #{entity.zVal}, #{entity.xAcc}, #{entity.yAcc}, #{entity.zAcc}, #{entity.voltage}, #{entity.temp}, #{entity.angle}, #{entity.state}, #{entity.mark})
+        </foreach>
+        on duplicate key update
+         node_id = values(node_id) , time = values(time) , x_val = values(x_val) , y_val = values(y_val) , z_val = values(z_val) , x_acc = values(x_acc) , y_acc = values(y_acc) , z_acc = values(z_acc) , voltage = values(voltage) , temp = values(temp) , angle = values(angle) , state = values(state) , mark = values(mark)     </insert>
+    <select id="selectListJoin" parameterType="com.example.damcurvity.que.InfoStationNodeQue" resultType="com.example.damcurvity.vo.InfoStationNodeVO">
+        SELECT
+        isn.id AS id,
+        node_id AS nodeId,
+        station_id AS stationId,
+        bs.`name` as stationName,
+        time AS time,
+        x_val AS xVal,
+        y_val AS yVal,
+        z_val AS zVal,
+        x_acc AS xAcc,
+        y_acc AS yAcc,
+        z_acc AS zAcc,
+        voltage AS voltage,
+        temp AS temp,
+        angle AS angle,
+        isn.state AS state,
+        mark AS mark
+        FROM
+        info_station_node isn
+        LEFT JOIN base_station bs on bs.id = isn.station_id
+        <where>
+            <if test="infoStationNodeQue.initMark != null">time > (SELECT min(time) from station_init_value siv WHERE siv.station_id = #{infoStationNodeQue.stationId})</if>
+            <if test="infoStationNodeQue.stationId != null">AND station_id = #{infoStationNodeQue.stationId}</if>
+            <if test="infoStationNodeQue.nodeName != null">AND node_id = #{infoStationNodeQue.nodeName}</if>
+            <if test="infoStationNodeQue.time != null">AND time = #{infoStationNodeQue.time}</if>
+            <if test="infoStationNodeQue.startTime != null">AND time >= #{infoStationNodeQue.startTime}</if>
+            <if test="infoStationNodeQue.endTime != null">AND time &lt;= #{infoStationNodeQue.endTime}</if>
+        </where>
+        order by time desc
+    </select>
+
+    <select id="selectByInterval" parameterType="com.example.damcurvity.que.InfoStationNodeQue" resultType="com.example.damcurvity.vo.InfoStationNodeVO">
+        SELECT
+        isn.id AS id,
+        node_id AS nodeId,
+        station_id AS stationId,
+        bs.`name` AS stationName,
+        left(time,#{infoStationNodeQue.displayNum}) AS time,
+        avg( x_val ) AS xVal,
+        avg( y_val ) AS yVal,
+        avg( z_val ) AS zVal,
+        avg( x_acc ) AS xAcc,
+        avg( y_acc ) AS yAcc,
+        avg( z_acc ) AS zAcc,
+        avg( voltage ) AS voltage,
+        avg( temp ) AS temp,
+        avg( angle ) AS angle,
+        isn.state AS state,
+        mark AS mark
+        FROM
+        info_station_node isn
+        LEFT JOIN base_station bs ON bs.id = isn.station_id
+        <where>
+            <if test="infoStationNodeQue.initMark != null">time > (SELECT min(time) from station_init_value siv WHERE siv.station_id = #{infoStationNodeQue.stationId})</if>
+            <if test="infoStationNodeQue.stationId != null">AND station_id = #{infoStationNodeQue.stationId}</if>
+            <if test="infoStationNodeQue.startTime != null">AND time >= #{infoStationNodeQue.startTime}</if>
+            <if test="infoStationNodeQue.endTime != null">AND time &lt;= #{infoStationNodeQue.endTime}</if>
+        </where>
+        group by nodeId,UNIX_TIMESTAMP( `time` ) DIV (#{infoStationNodeQue.interval})
+    </select>
+    <select id="change_rage"  resultType="com.example.damcurvity.vo.InfoStationNodeChangeRateVO">
+        SELECT t1.station_id as stationId,bs.`name` as stationName,t1.node_id as node,abs(t2.xVal-t1.xVal) as xDiff, abs(t2.yVal-t1.yVal) as yDiff from
+        (SELECT station_id,node_id,avg(x_val) as xVal, avg(y_val) as yVal from info_station_node
+        WHERE time > CURDATE() - INTERVAL 1 DAY and time &lt; CURDATE()
+        GROUP BY node_id) t1
+        LEFT JOIN
+        (SELECT node_id,avg(x_val) as xVal, avg(y_val) as yVal from info_station_node
+        WHERE time > CURDATE()
+        GROUP BY node_id) t2 on t1.node_id = t2.node_id
+        LEFT JOIN base_station bs on bs.id = t1.station_id
+    </select>
+
+    <select id="selectByIntervalXz" parameterType="com.example.damcurvity.que.InfoStationNodeXzQue" resultType="com.example.damcurvity.entity.InfoStaionNodeXz">
+        SELECT
+            isn.node_id AS nodeId,
+            station_id AS stationId,
+            time AS time,
+            IF
+            (
+            abs( isn.x_val - temp.xMean ) > #{zx} * temp.xStd,
+            temp.xMean,
+            isn.x_val
+            ) AS xVal,
+            IF
+            (
+            abs( isn.y_val - temp.yMean ) > #{zx} * temp.yStd,
+            temp.yMean,
+            isn.y_val
+            ) AS yVal,
+            IF
+            (
+            abs( isn.z_val - temp.zMean ) > #{zx} * temp.zStd,
+            temp.zMean,
+            isn.z_val
+            ) AS zVal,
+            x_acc AS xAcc,
+            y_acc AS yAcc,
+            z_acc AS zAcc,
+            voltage AS voltage,
+            temp AS temp,
+            angle AS angle,
+            state AS state,
+            mark AS mark
+        FROM
+            info_station_node isn
+            LEFT JOIN (
+            SELECT
+            node_id,
+            std( x_val ) AS xStd,
+            avg( x_val ) AS xMean,
+            std( y_val ) AS yStd,
+            avg( y_val ) AS yMean,
+            std( z_val ) AS zStd,
+            avg( z_val ) AS zMean
+            FROM
+            info_station_node aa
+            WHERE aa.station_id = #{stationId} and
+            aa.time > DATE_SUB( NOW(), INTERVAL #{interval} DAY)
+            GROUP BY
+            node_id
+            ) temp ON temp.node_id = isn.node_id
+        WHERE isn.station_id = #{stationId} and
+            isn.time > SUBDATE(CURDATE(),1)
+    </select>
+</mapper>
+

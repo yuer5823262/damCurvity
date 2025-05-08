@@ -1,0 +1,352 @@
+[2023-08-20 10:28:07.130] [INFO] [constant] - Error: Failed to open serial port.
+[2023-08-20 10:28:07.130] [INFO] [constant] - 已初始化端口:com4
+[2023-08-20 10:29:38.840] [INFO] [constant] - Error: Failed to open serial port.
+[2023-08-20 10:29:38.840] [INFO] [constant] - 初始化端口失败:com4
+[2023-08-20 10:30:27.120] [INFO] [constant] - Error: Failed to open serial port.
+[2023-08-20 10:30:27.120] [INFO] [constant] - 初始化端口失败:com4
+[2023-08-20 10:30:59.501] [INFO] [constant] - Error: Failed to open serial port.
+[2023-08-20 10:30:59.501] [INFO] [constant] - 初始化端口失败:com4
+[2023-08-20 10:31:29.645] [INFO] [constant] - Error: Failed to open serial port.
+[2023-08-20 10:31:29.645] [INFO] [constant] - 初始化端口失败:com4
+[2023-08-20 10:31:47.470] [INFO] [constant] - Error: Failed to open serial port.
+[2023-08-20 10:31:47.470] [INFO] [constant] - 初始化端口失败:com4
+[2023-08-20 10:32:51.156] [INFO] [constant] - Error: Failed to open serial port.
+[2023-08-20 10:32:51.156] [INFO] [constant] - 初始化端口失败:com4
+[2023-08-20 10:33:17.156] [INFO] [constant] - Error: Failed to open serial port.
+[2023-08-20 10:33:17.156] [INFO] [constant] - 初始化端口失败:com4
+[2023-08-20 10:33:42.329] [INFO] [constant] - Error: Failed to open serial port.
+[2023-08-20 10:33:42.329] [INFO] [constant] - 初始化端口失败:com4
+[2023-08-20 10:35:37.052] [INFO] [constant] - Error: Failed to open serial port.
+[2023-08-20 10:35:37.052] [INFO] [constant] - 初始化端口失败:com4
+[2023-08-20 10:37:47.860] [INFO] [constant] - Error: Failed to open serial port.
+[2023-08-20 10:37:47.860] [INFO] [constant] - 初始化端口失败:com4
+[2023-08-20 10:39:36.508] [INFO] [constant] - dsadasdsazzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz
+[2023-08-20 10:39:36.987] [INFO] [constant] - $HUASI,GET,DATA,902173*22
+
+[2023-08-20 10:40:50.559] [INFO] [constant] - dsadasdsazzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz
+[2023-08-20 10:40:51.426] [INFO] [constant] - $HUASI,GET,DATA,902173*22
+
+[2023-08-20 10:48:39.567] [INFO] [constant] - Error: Failed to open serial port.
+[2023-08-20 10:48:39.567] [INFO] [constant] - 初始化端口失败:com4
+[2023-08-20 10:49:25.164] [INFO] [constant] - Error: Failed to open serial port.
+[2023-08-20 10:49:25.164] [INFO] [constant] - 初始化端口失败:com4
+[2023-08-20 10:49:51.719] [INFO] [constant] - Error: Failed to open serial port.
+[2023-08-20 10:49:52.480] [INFO] [constant] - 初始化端口失败:com4
+[2023-08-20 11:53:22.252] [INFO] [constant] - Error: Failed to open serial port.
+[2023-08-20 11:53:22.252] [INFO] [constant] - 初始化端口失败:com4
+[2023-08-20 11:53:36.621] [INFO] [constant] - 开始获取数据
+[2023-08-20 12:07:44.169] [INFO] [constant] - Error: Failed to open serial port.
+[2023-08-20 12:07:44.169] [INFO] [constant] - 初始化端口失败:com4
+[2023-08-20 12:08:03.433] [INFO] [constant] - 开始获取数据
+[2023-08-20 12:08:33.716] [INFO] [constant] - Error: Failed to open serial port.
+[2023-08-20 12:08:33.716] [INFO] [constant] - 初始化端口失败:com4
+[2023-08-20 12:08:43.041] [INFO] [constant] - 开始获取数据
+[2023-08-20 12:18:43.063] [INFO] [constant] - 开始获取数据
+[2023-08-20 14:01:17.559] [INFO] [constant] - Error: Failed to open serial port.
+[2023-08-20 14:01:17.559] [INFO] [constant] - 初始化端口失败:com4
+[2023-08-20 14:01:26.853] [INFO] [constant] - 开始获取数据
+[2023-08-23 21:36:59.622] [INFO] [constant] - Error: Failed to open serial port.
+[2023-08-23 21:36:59.622] [INFO] [constant] - 初始化端口失败:com4
+[2023-08-23 21:37:32.767] [INFO] [constant] - Error: Failed to open serial port.
+[2023-08-23 21:37:32.768] [INFO] [constant] - 初始化端口失败:com4
+[2023-08-23 21:42:02.938] [INFO] [constant] - Error: Failed to open serial port.
+[2023-08-23 21:42:02.939] [INFO] [constant] - 初始化端口失败:com4
+[2023-08-23 21:42:15.208] [INFO] [constant] - 位移测试设备1开始获取数据
+[2023-08-23 21:42:18.533] [INFO] [constant] - 位移测试设备2开始获取数据
+[2023-08-23 21:43:04.397] [INFO] [constant] - Error: Failed to open serial port.
+[2023-08-23 21:43:04.397] [INFO] [constant] - 初始化端口失败:com4
+[2023-08-23 21:43:14.205] [INFO] [constant] - 位移测试设备1开始获取数据
+[2023-08-23 21:43:14.215] [INFO] [constant] - 位移测试设备2开始获取数据
+[2023-08-23 21:44:14.234] [INFO] [constant] - 位移测试设备1开始获取数据
+[2023-08-23 21:44:14.254] [INFO] [constant] - 位移测试设备2开始获取数据
+[2023-08-23 21:45:14.251] [INFO] [constant] - 位移测试设备1开始获取数据
+[2023-08-23 21:45:14.289] [INFO] [constant] - 位移测试设备2开始获取数据
+[2023-08-23 21:46:14.282] [INFO] [constant] - 位移测试设备1开始获取数据
+[2023-08-23 21:47:14.335] [INFO] [constant] - 位移测试设备1开始获取数据
+[2023-08-23 21:47:14.335] [INFO] [constant] - 位移测试设备2开始获取数据
+[2023-08-23 21:48:14.364] [INFO] [constant] - 位移测试设备1开始获取数据
+[2023-08-23 21:49:14.357] [INFO] [constant] - 位移测试设备2开始获取数据
+[2023-08-23 21:49:14.391] [INFO] [constant] - 位移测试设备1开始获取数据
+[2023-08-23 22:24:28.585] [INFO] [constant] - Error: Failed to open serial port.
+[2023-08-23 22:24:28.585] [INFO] [constant] - 初始化端口失败:com4
+[2023-08-23 22:24:38.364] [INFO] [constant] - 位移测试设备2开始获取数据
+[2023-08-23 22:24:38.390] [INFO] [constant] - 位移测试设备1开始获取数据
+[2023-08-23 22:25:38.418] [INFO] [constant] - 位移测试设备1开始获取数据
+[2023-08-23 22:27:16.305] [INFO] [constant] - Error: Failed to open serial port.
+[2023-08-23 22:27:16.305] [INFO] [constant] - 初始化端口失败:com4
+[2023-08-23 22:27:26.089] [INFO] [constant] - 位移测试设备2开始获取数据
+[2023-08-23 22:27:26.099] [INFO] [constant] - 位移测试设备1开始获取数据
+[2023-08-26 20:32:34.311] [INFO] [constant] - 位移测试设备1开始获取数据
+[2023-08-26 20:32:54.766] [INFO] [constant] - 位移测试设备1开始获取数据
+[2023-08-26 20:33:17.436] [INFO] [constant] - Error: Failed to open serial port.
+[2023-08-26 20:34:02.867] [INFO] [constant] - 位移测试设备1开始获取数据
+[2023-08-26 20:43:01.445] [INFO] [constant] - Error: Failed to open serial port.
+[2023-08-26 20:43:19.492] [INFO] [constant] - 位移测试设备1开始获取数据
+[2023-08-26 20:43:40.356] [INFO] [constant] - Error: Failed to open serial port.
+[2023-08-26 20:43:53.846] [INFO] [constant] - 位移测试设备1开始获取数据
+[2023-08-26 20:44:07.528] [INFO] [constant] - $HUASI,GET,DATA,902173*22
+
+[2023-09-03 09:09:53.380] [INFO] [constant] - Error: Failed to open serial port.
+[2023-09-03 09:09:53.380] [INFO] [constant] - $HUASI,SET,UPLOADMODEL,902173,0*76
+
+[2023-09-03 09:10:03.131] [INFO] [constant] - 位移测试设备1开始获取数据
+[2023-09-03 09:56:57.822] [INFO] [constant] - Error: Failed to open serial port.
+[2023-09-03 09:56:57.822] [INFO] [constant] - $HUASI,SET,UPLOADMODEL,902173,0*76
+
+[2023-09-03 09:57:07.633] [INFO] [constant] - 位移测试设备1开始获取数据
+[2023-09-03 09:58:07.665] [INFO] [constant] - 位移测试设备1开始获取数据
+[2023-09-03 09:59:07.678] [INFO] [constant] - 位移测试设备1开始获取数据
+[2023-09-03 10:00:07.704] [INFO] [constant] - 位移测试设备1开始获取数据
+[2023-09-03 10:00:23.931] [INFO] [constant] - Error: Failed to open serial port.
+[2023-09-03 10:00:23.932] [INFO] [constant] - $HUASI,SET,UPLOADMODEL,902173,0*76
+
+[2023-09-03 10:01:06.278] [INFO] [constant] - 位移测试设备1开始获取数据
+[2023-09-03 10:01:13.844] [INFO] [constant] - Error: Failed to open serial port.
+[2023-09-03 10:01:13.844] [INFO] [constant] - $HUASI,SET,UPLOADMODEL,902173,0*76
+
+[2023-09-03 10:01:23.677] [INFO] [constant] - 位移测试设备1开始获取数据
+[2023-09-03 10:02:23.719] [INFO] [constant] - 位移测试设备1开始获取数据
+[2023-09-03 10:03:23.766] [INFO] [constant] - 位移测试设备1开始获取数据
+[2023-09-03 10:04:23.800] [INFO] [constant] - 位移测试设备1开始获取数据
+[2023-09-03 10:05:23.840] [INFO] [constant] - 位移测试设备1开始获取数据
+[2023-09-03 10:06:23.885] [INFO] [constant] - 位移测试设备1开始获取数据
+[2023-09-03 10:08:03.816] [INFO] [constant] - 位移测试设备1开始获取数据
+[2023-09-03 10:08:10.410] [INFO] [constant] - Error: Failed to open serial port.
+[2023-09-03 10:08:10.410] [INFO] [constant] - $HUASI,SET,UPLOADMODEL,902173,0*76
+
+[2023-09-03 10:08:20.204] [INFO] [constant] - 位移测试设备1开始获取数据
+[2023-09-03 10:08:26.803] [INFO] [constant] - Error: Failed to open serial port.
+[2023-09-03 10:08:26.803] [INFO] [constant] - $HUASI,SET,UPLOADMODEL,902173,0*76
+
+[2023-09-03 10:17:24.196] [INFO] [constant] - Error: Failed to open serial port.
+[2023-09-03 10:17:24.196] [INFO] [constant] - $HUASI,SET,UPLOADMODEL,902173,0*76
+
+[2023-09-03 10:18:27.090] [INFO] [constant] - Error: Failed to open serial port.
+[2023-09-03 10:18:27.092] [INFO] [constant] - $HUASI,SET,UPLOADMODEL,902173,0*76
+
+[2023-09-03 10:18:28.120] [INFO] [constant] - 位移测试设备1开始获取数据
+[2023-09-03 10:18:36.099] [INFO] [constant] - Error: Failed to open serial port.
+[2023-09-03 10:18:36.099] [INFO] [constant] - $HUASI,SET,UPLOADMODEL,902173,0*76
+
+[2023-09-03 10:20:12.857] [INFO] [constant] - 位移测试设备1开始获取数据
+[2023-09-03 10:20:18.747] [INFO] [constant] - Error: Failed to open serial port.
+[2023-09-03 10:20:18.747] [INFO] [constant] - $HUASI,SET,UPLOADMODEL,902173,0*76
+
+[2023-09-03 10:20:28.533] [INFO] [constant] - 位移测试设备1开始获取数据
+[2023-09-03 10:21:28.549] [INFO] [constant] - 位移测试设备1开始获取数据
+[2023-09-03 10:22:28.569] [INFO] [constant] - 位移测试设备1开始获取数据
+[2023-09-03 10:23:28.612] [INFO] [constant] - 位移测试设备1开始获取数据
+[2023-10-04 21:03:39.668] [INFO] [constant] - Error: Failed to open serial port.
+[2023-10-04 21:12:21.508] [INFO] [constant] - Error: Failed to open serial port.
+[2023-10-04 21:16:13.591] [INFO] [constant] - Error: Failed to open serial port.
+[2023-10-04 21:16:52.936] [INFO] [constant] - Error: Failed to open serial port.
+[2023-10-04 21:34:45.154] [INFO] [constant] - Error: Failed to open serial port.
+[2023-10-04 22:02:59.282] [INFO] [constant] - Error: Failed to open serial port.
+[2023-10-04 22:04:28.161] [INFO] [constant] - Error: Failed to open serial port.
+[2023-10-04 22:05:24.098] [INFO] [constant] - Error: Failed to open serial port.
+[2023-10-04 22:06:06.534] [INFO] [constant] - Error: Failed to open serial port.
+[2023-10-04 22:07:19.622] [INFO] [constant] - Error: Failed to open serial port.
+[2023-10-04 22:09:42.779] [INFO] [constant] - Error: Failed to open serial port.
+[2023-10-04 22:11:50.776] [INFO] [constant] - Error: Failed to open serial port.
+[2023-10-04 22:12:36.876] [INFO] [constant] - Error: Failed to open serial port.
+[2023-10-04 22:13:55.933] [INFO] [constant] - Error: Failed to open serial port.
+[2023-10-04 22:14:32.915] [INFO] [constant] - Error: Failed to open serial port.
+[2023-10-05 09:12:57.309] [INFO] [constant] - Error: Failed to open serial port.
+[2023-10-05 09:15:44.725] [INFO] [constant] - Error: Failed to open serial port.
+[2023-10-05 09:18:28.336] [INFO] [constant] - Error: Failed to open serial port.
+[2023-10-05 09:20:05.152] [INFO] [constant] - Error: Failed to open serial port.
+[2023-10-05 09:21:18.462] [INFO] [constant] - Error: Failed to open serial port.
+[2023-10-05 09:21:56.285] [INFO] [constant] - Error: Failed to open serial port.
+[2023-10-05 09:23:45.111] [INFO] [constant] - Error: Failed to open serial port.
+[2023-10-05 09:55:10.187] [INFO] [constant] - Error: Failed to open serial port.
+[2023-10-10 20:55:30.621] [INFO] [constant] - Error: Failed to open serial port.
+[2023-10-21 09:50:00.522] [INFO] [constant] - Error: Failed to open serial port.
+[2023-10-21 11:51:06.674] [INFO] [constant] - Error: Failed to open serial port.
+[2023-10-21 11:53:04.697] [INFO] [constant] - Error: Failed to open serial port.
+[2023-10-21 11:54:43.909] [INFO] [constant] - Error: Failed to open serial port.
+[2023-10-21 12:06:14.192] [INFO] [constant] - Error: Failed to open serial port.
+[2023-10-21 12:11:39.110] [INFO] [constant] - Error: Failed to open serial port.
+[2023-10-21 18:32:51.681] [INFO] [constant] - Error: Failed to open serial port.
+[2023-10-22 19:27:57.906] [INFO] [constant] - Error: Failed to open serial port.
+[2023-10-22 19:55:01.770] [INFO] [constant] - Error: Failed to open serial port.
+[2023-10-22 20:01:47.167] [INFO] [constant] - Error: Failed to open serial port.
+[2023-10-22 20:05:20.232] [INFO] [constant] - Error: Failed to open serial port.
+[2023-10-23 12:53:29.980] [INFO] [constant] - Error: Failed to open serial port.
+[2023-10-27 16:52:51.498] [INFO] [constant] - Error: Failed to open serial port.
+[2023-10-28 10:38:51.074] [INFO] [constant] - Error: Failed to open serial port.
+[2023-10-28 10:42:23.595] [INFO] [constant] - Error: Failed to open serial port.
+[2023-12-05 09:46:40.399] [INFO] [constant] - Error: Failed to open serial port.
+[2023-12-05 09:47:46.726] [INFO] [constant] - Error: Failed to open serial port.
+[2023-12-05 09:54:22.494] [INFO] [constant] - Error: Failed to open serial port.
+[2023-12-05 10:02:16.858] [INFO] [constant] - Error: Failed to open serial port.
+[2023-12-05 10:33:49.962] [INFO] [constant] - Error: Failed to open serial port.
+[2023-12-05 10:35:46.657] [INFO] [constant] - Error: Failed to open serial port.
+[2023-12-05 10:44:01.873] [INFO] [constant] - Error: Failed to open serial port.
+[2023-12-05 10:48:14.432] [INFO] [constant] - Error: Failed to open serial port.
+[2023-12-05 10:50:01.293] [INFO] [constant] - Error: Failed to open serial port.
+[2023-12-10 17:19:01.685] [INFO] [constant] - Error: Failed to open serial port.
+[2024-01-03 08:43:01.269] [INFO] [constant] - Error: Failed to open serial port.
+[2024-01-03 08:50:08.184] [INFO] [constant] - Error: Failed to open serial port.
+[2024-01-03 08:51:03.784] [INFO] [constant] - Error: Failed to open serial port.
+[2024-01-07 19:04:49.049] [INFO] [constant] - Error: Failed to open serial port.
+[2024-01-07 19:39:22.140] [INFO] [constant] - Error: Failed to open serial port.
+[2024-01-07 19:43:17.945] [INFO] [constant] - Error: Failed to open serial port.
+[2024-01-07 19:44:04.486] [INFO] [constant] - Error: Failed to open serial port.
+[2024-01-07 19:53:54.429] [INFO] [constant] - Error: Failed to open serial port.
+[2024-01-07 19:56:38.470] [INFO] [constant] - Error: Failed to open serial port.
+[2024-01-07 19:57:35.104] [INFO] [constant] - Error: Failed to open serial port.
+[2024-01-07 20:00:46.961] [INFO] [constant] - Error: Failed to open serial port.
+[2024-01-07 20:06:19.137] [INFO] [constant] - Error: Failed to open serial port.
+[2024-01-13 16:41:25.452] [INFO] [constant] - Error: Failed to open serial port.
+[2024-03-29 13:13:11.204] [INFO] [constant] - Error: Failed to open serial port.
+[2024-03-29 13:19:19.943] [INFO] [constant] - Error: Failed to open serial port.
+[2024-03-29 13:20:02.856] [INFO] [constant] - Error: Failed to open serial port.
+[2024-03-29 13:20:50.025] [INFO] [constant] - Error: Failed to open serial port.
+[2024-03-29 13:22:52.220] [INFO] [constant] - Error: Failed to open serial port.
+[2024-03-30 22:44:14.277] [INFO] [constant] - Error: Failed to open serial port.
+[2024-03-30 22:48:09.281] [INFO] [constant] - Error: Failed to open serial port.
+[2024-03-30 22:49:31.926] [INFO] [constant] - Error: Failed to open serial port.
+[2024-03-30 23:02:18.052] [INFO] [constant] - Error: Failed to open serial port.
+[2024-03-30 23:03:49.611] [INFO] [constant] - Error: Failed to open serial port.
+[2024-03-31 15:20:06.054] [INFO] [constant] - Error: Failed to open serial port.
+[2024-03-31 15:21:19.043] [INFO] [constant] - Error: Failed to open serial port.
+[2024-03-31 15:22:12.875] [INFO] [constant] - Error: Failed to open serial port.
+[2024-03-31 15:22:47.093] [INFO] [constant] - Error: Failed to open serial port.
+[2024-03-31 15:23:51.666] [INFO] [constant] - Error: Failed to open serial port.
+[2024-03-31 15:24:11.788] [INFO] [constant] - Error: Failed to open serial port.
+[2024-03-31 15:33:46.890] [INFO] [constant] - Error: Failed to open serial port.
+[2024-03-31 15:35:26.211] [INFO] [constant] - Error: Failed to open serial port.
+[2024-03-31 15:37:47.141] [INFO] [constant] - Error: Failed to open serial port.
+[2024-03-31 15:40:36.506] [INFO] [constant] - Error: Failed to open serial port.
+[2024-03-31 15:42:26.777] [INFO] [constant] - Error: Failed to open serial port.
+[2024-03-31 15:43:48.322] [INFO] [constant] - Error: Failed to open serial port.
+[2024-03-31 15:56:38.930] [INFO] [constant] - Error: Failed to open serial port.
+[2024-03-31 15:57:28.168] [INFO] [constant] - Error: Failed to open serial port.
+[2024-03-31 16:41:26.436] [INFO] [constant] - Error: Failed to open serial port.
+[2024-03-31 16:43:36.639] [INFO] [constant] - Error: Failed to open serial port.
+[2024-03-31 16:45:04.420] [INFO] [constant] - Error: Failed to open serial port.
+[2024-03-31 16:45:35.487] [INFO] [constant] - Error: Failed to open serial port.
+[2024-03-31 16:46:31.878] [INFO] [constant] - Error: Failed to open serial port.
+[2024-03-31 20:52:53.866] [INFO] [constant] - Error: Failed to open serial port.
+[2024-03-31 21:09:55.883] [INFO] [constant] - Error: Failed to open serial port.
+[2024-03-31 21:12:25.096] [INFO] [constant] - Error: Failed to open serial port.
+[2024-03-31 21:13:58.810] [INFO] [constant] - Error: Failed to open serial port.
+[2024-03-31 21:15:03.810] [INFO] [constant] - Error: Failed to open serial port.
+[2024-03-31 21:15:38.149] [INFO] [constant] - Error: Failed to open serial port.
+[2024-03-31 21:18:09.595] [INFO] [constant] - Error: Failed to open serial port.
+[2024-03-31 21:20:08.733] [INFO] [constant] - Error: Failed to open serial port.
+[2024-03-31 21:25:37.770] [INFO] [constant] - Error: Failed to open serial port.
+[2024-04-10 14:11:00.152] [INFO] [constant] - Error: Failed to open serial port.
+[2024-04-10 14:29:01.574] [INFO] [constant] - Error: Failed to open serial port.
+[2024-04-23 11:40:23.930] [INFO] [constant] - Error: Failed to open serial port.
+[2024-05-12 21:10:15.607] [INFO] [constant] - Error: Failed to open serial port.
+[2024-05-12 21:10:53.946] [INFO] [constant] - Error: Failed to open serial port.
+[2024-05-12 21:13:52.835] [INFO] [constant] - Error: Failed to open serial port.
+[2024-05-12 21:17:27.786] [INFO] [constant] - Error: Failed to open serial port.
+[2024-05-12 21:21:59.133] [INFO] [constant] - Error: Failed to open serial port.
+[2024-05-12 21:43:57.595] [INFO] [constant] - Error: Failed to open serial port.
+[2024-05-12 21:46:29.050] [INFO] [constant] - Error: Failed to open serial port.
+[2024-05-12 21:49:15.727] [INFO] [constant] - Error: Failed to open serial port.
+[2024-05-12 21:50:30.569] [INFO] [constant] - Error: Failed to open serial port.
+[2024-05-12 21:51:41.081] [INFO] [constant] - Error: Failed to open serial port.
+[2024-05-12 21:52:01.450] [INFO] [constant] - Error: Failed to open serial port.
+[2024-05-12 21:52:25.399] [INFO] [constant] - Error: Failed to open serial port.
+[2024-05-12 21:56:51.053] [INFO] [constant] - Error: Failed to open serial port.
+[2024-05-14 21:03:55.257] [INFO] [constant] - Error: Failed to open serial port.
+[2024-05-14 21:15:27.047] [INFO] [constant] - Error: Failed to open serial port.
+[2024-10-13 16:41:26.671] [INFO] [constant] - Error: Failed to open serial port.
+[2024-10-13 16:41:26.672] [INFO] [constant] - 添加采集任务:903862
+[2024-10-13 16:41:26.903] [INFO] [constant] - Error: Failed to open serial port.
+[2024-10-13 16:41:26.903] [INFO] [constant] - 添加采集任务:912954
+[2024-10-13 16:47:48.842] [INFO] [constant] - Error: Failed to open serial port.
+[2024-10-13 16:47:48.842] [INFO] [constant] - 添加采集任务:903862
+[2024-10-13 16:47:49.073] [INFO] [constant] - Error: Failed to open serial port.
+[2024-10-13 16:47:49.073] [INFO] [constant] - 添加采集任务:912954
+[2024-10-13 16:51:53.280] [INFO] [constant] - Error: Failed to open serial port.
+[2024-10-13 16:51:53.281] [INFO] [constant] - 添加采集任务:903862
+[2024-10-13 16:51:53.513] [INFO] [constant] - Error: Failed to open serial port.
+[2024-10-13 16:51:53.513] [INFO] [constant] - 添加采集任务:912954
+[2025-02-23 09:45:42.434] [INFO] [constant] - Error: Failed to open serial port.
+[2025-02-23 09:45:42.434] [INFO] [constant] - 添加采集任务:903862
+[2025-02-23 09:45:42.668] [INFO] [constant] - Error: Failed to open serial port.
+[2025-02-23 09:45:42.668] [INFO] [constant] - 添加采集任务:912954
+[2025-02-23 09:46:01.609] [INFO] [constant] - Error: Failed to open serial port.
+[2025-02-23 09:46:01.609] [INFO] [constant] - 添加采集任务:903862
+[2025-02-23 09:46:01.841] [INFO] [constant] - Error: Failed to open serial port.
+[2025-02-23 09:46:01.841] [INFO] [constant] - 添加采集任务:912954
+[2025-02-23 09:48:06.209] [INFO] [constant] - Error: Failed to open serial port.
+[2025-02-23 09:48:06.209] [INFO] [constant] - 添加采集任务:903862
+[2025-02-23 09:48:06.425] [INFO] [constant] - Error: Failed to open serial port.
+[2025-02-23 09:48:06.425] [INFO] [constant] - 添加采集任务:912954
+[2025-02-23 09:48:15.971] [INFO] [constant] - 913862开始获取数据
+[2025-02-23 09:48:15.972] [INFO] [constant] - $HUASI,GET,DEVICE,913862*23
+
+[2025-02-23 09:48:16.235] [INFO] [constant] - 14#开始获取数据
+[2025-02-23 09:48:16.235] [INFO] [constant] - $HUASI,GET,DEVICE,912954*26
+
+[2025-02-23 09:56:41.457] [INFO] [constant] - Error: Failed to open serial port.
+[2025-02-23 09:56:41.457] [INFO] [constant] - 添加采集任务:903862
+[2025-02-23 09:56:41.689] [INFO] [constant] - Error: Failed to open serial port.
+[2025-02-23 09:56:41.689] [INFO] [constant] - 添加采集任务:912954
+[2025-02-23 09:56:51.222] [INFO] [constant] - 913862开始获取数据
+[2025-02-23 09:56:51.226] [INFO] [constant] - $HUASI,GET,DEVICE,913862*23
+
+[2025-02-23 09:56:51.471] [INFO] [constant] - 14#开始获取数据
+[2025-02-23 09:56:51.471] [INFO] [constant] - $HUASI,GET,DEVICE,912954*26
+
+[2025-04-10 21:56:44.690] [INFO] [constant] - Error: Failed to open serial port.
+[2025-04-10 21:56:44.690] [INFO] [constant] - 添加采集任务:903862
+[2025-04-10 21:56:44.921] [INFO] [constant] - Error: Failed to open serial port.
+[2025-04-10 21:56:44.921] [INFO] [constant] - 添加采集任务:912954
+[2025-04-13 19:54:00.595] [INFO] [constant] - Error: Failed to open serial port.
+[2025-04-13 19:54:00.595] [INFO] [constant] - 添加采集任务:903862
+[2025-04-13 19:54:00.830] [INFO] [constant] - Error: Failed to open serial port.
+[2025-04-13 19:54:00.830] [INFO] [constant] - 添加采集任务:912954
+[2025-04-13 21:45:19.248] [INFO] [constant] - Error: Failed to open serial port.
+[2025-04-13 21:45:19.248] [INFO] [constant] - 添加采集任务:903862
+[2025-04-13 21:45:19.481] [INFO] [constant] - Error: Failed to open serial port.
+[2025-04-13 21:45:19.481] [INFO] [constant] - 添加采集任务:912954
+[2025-04-20 20:40:28.168] [INFO] [constant] - Error: Failed to open serial port.
+[2025-04-20 20:40:28.169] [INFO] [constant] - 添加采集任务:903862
+[2025-04-20 20:40:28.413] [INFO] [constant] - Error: Failed to open serial port.
+[2025-04-20 20:40:28.413] [INFO] [constant] - 添加采集任务:912954
+[2025-05-05 17:15:55.556] [INFO] [constant] - Error: Failed to open serial port.
+[2025-05-05 17:15:55.556] [INFO] [constant] - 添加采集任务:903862
+[2025-05-05 17:15:55.787] [INFO] [constant] - Error: Failed to open serial port.
+[2025-05-05 17:15:55.787] [INFO] [constant] - 添加采集任务:912954
+[2025-05-05 17:44:19.516] [INFO] [constant] - Error: Failed to open serial port.
+[2025-05-05 17:44:19.516] [INFO] [constant] - 添加采集任务:903862
+[2025-05-05 17:44:19.736] [INFO] [constant] - Error: Failed to open serial port.
+[2025-05-05 17:44:19.736] [INFO] [constant] - 添加采集任务:912954
+[2025-05-05 17:46:49.007] [INFO] [constant] - Error: Failed to open serial port.
+[2025-05-05 17:46:49.007] [INFO] [constant] - 添加采集任务:903862
+[2025-05-05 17:46:49.240] [INFO] [constant] - Error: Failed to open serial port.
+[2025-05-05 17:46:49.240] [INFO] [constant] - 添加采集任务:912954
+[2025-05-05 19:20:18.027] [INFO] [constant] - Error: Failed to open serial port.
+[2025-05-05 19:20:18.027] [INFO] [constant] - 添加采集任务:903862
+[2025-05-05 19:20:18.256] [INFO] [constant] - Error: Failed to open serial port.
+[2025-05-05 19:20:18.256] [INFO] [constant] - 添加采集任务:912954
+[2025-05-05 19:21:29.421] [INFO] [constant] - Error: Failed to open serial port.
+[2025-05-05 19:21:29.422] [INFO] [constant] - 添加采集任务:903862
+[2025-05-05 19:21:29.651] [INFO] [constant] - Error: Failed to open serial port.
+[2025-05-05 19:21:29.651] [INFO] [constant] - 添加采集任务:912954
+[2025-05-05 19:23:05.460] [INFO] [constant] - Error: Failed to open serial port.
+[2025-05-05 19:23:05.460] [INFO] [constant] - 添加采集任务:903862
+[2025-05-05 19:23:05.691] [INFO] [constant] - Error: Failed to open serial port.
+[2025-05-05 19:23:05.691] [INFO] [constant] - 添加采集任务:912954
+[2025-05-05 19:56:28.351] [INFO] [constant] - Error: Failed to open serial port.
+[2025-05-05 19:56:28.351] [INFO] [constant] - 添加采集任务:903862
+[2025-05-05 19:56:28.582] [INFO] [constant] - Error: Failed to open serial port.
+[2025-05-05 19:56:28.582] [INFO] [constant] - 添加采集任务:912954
+[2025-05-05 20:05:04.372] [INFO] [constant] - Error: Failed to open serial port.
+[2025-05-05 20:05:04.372] [INFO] [constant] - 添加采集任务:903862
+[2025-05-05 20:05:04.605] [INFO] [constant] - Error: Failed to open serial port.
+[2025-05-05 20:05:04.605] [INFO] [constant] - 添加采集任务:912954
+[2025-05-05 20:06:42.417] [INFO] [constant] - Error: Failed to open serial port.
+[2025-05-05 20:06:42.417] [INFO] [constant] - 添加采集任务:903862
+[2025-05-05 20:06:42.760] [INFO] [constant] - Error: Failed to open serial port.
+[2025-05-05 20:06:42.760] [INFO] [constant] - 添加采集任务:912954
+[2025-05-05 20:13:03.126] [INFO] [constant] - Error: Failed to open serial port.
+[2025-05-05 20:13:03.127] [INFO] [constant] - 添加采集任务:903862
+[2025-05-05 20:13:03.354] [INFO] [constant] - Error: Failed to open serial port.
+[2025-05-05 20:13:03.354] [INFO] [constant] - 添加采集任务:912954

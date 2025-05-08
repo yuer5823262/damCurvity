@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.damcurvity.dao.AlertInfoDao">
+
+    <resultMap type="com.example.damcurvity.entity.AlertInfo" id="AlertInfoMap">
+        <result property="id" column="id" jdbcType="INTEGER"/>
+        <result property="position" column="position" jdbcType="VARCHAR"/>
+        <result property="node" column="node" jdbcType="VARCHAR"/>
+        <result property="xyType" column="xy_type" jdbcType="VARCHAR"/>
+        <result property="type" column="type" jdbcType="VARCHAR"/>
+        <result property="level" column="level" jdbcType="INTEGER"/>
+        <result property="typeNo" column="type_no" jdbcType="INTEGER"/>
+        <result property="content" column="content" jdbcType="VARCHAR"/>
+        <result property="time" column="time" jdbcType="VARCHAR"/>
+        <result property="state" column="state" jdbcType="INTEGER"/>
+        <result property="remark1" column="remark1" jdbcType="VARCHAR"/>
+        <result property="remark2" column="remark2" jdbcType="VARCHAR"/>
+        <result property="remark3" column="remark3" jdbcType="VARCHAR"/>
+        <result property="opTime1" column="op_time1" jdbcType="VARCHAR"/>
+        <result property="operator1" column="operator1" jdbcType="VARCHAR"/>
+        <result property="opTime2" column="op_time2" jdbcType="VARCHAR"/>
+        <result property="operator2" column="operator2" jdbcType="VARCHAR"/>
+        <result property="opTime3" column="op_time3" jdbcType="VARCHAR"/>
+        <result property="operator3" column="operator3" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <!-- 批量插入 -->
+    <insert id="insertBatch" keyProperty="id" useGeneratedKeys="true">
+        insert into damcurvitydb.alert_info(position, node, xy_type, type, level, type_no, content, time, state, remark1, remark2, remark3, op_time1, operator1, op_time2, operator2, op_time3, operator3)
+        values
+        <foreach collection="entities" item="entity" separator=",">
+        (#{entity.position}, #{entity.node}, #{entity.xyType}, #{entity.type}, #{entity.level}, #{entity.typeNo}, #{entity.content}, #{entity.time}, #{entity.state}, #{entity.remark1}, #{entity.remark2}, #{entity.remark3}, #{entity.opTime1}, #{entity.operator1}, #{entity.opTime2}, #{entity.operator2}, #{entity.opTime3}, #{entity.operator3})
+        </foreach>
+    </insert>
+    <!-- 批量插入或按主键更新 -->
+    <insert id="insertOrUpdateBatch" keyProperty="id" useGeneratedKeys="true">
+        insert into damcurvitydb.alert_info(position, node, xy_type, type, level, type_no, content, time, state, remark1, remark2, remark3, op_time1, operator1, op_time2, operator2, op_time3, operator3)
+        values
+        <foreach collection="entities" item="entity" separator=",">
+            (#{entity.position}, #{entity.node}, #{entity.xyType}, #{entity.type}, #{entity.level}, #{entity.typeNo}, #{entity.content}, #{entity.time}, #{entity.state}, #{entity.remark1}, #{entity.remark2}, #{entity.remark3}, #{entity.opTime1}, #{entity.operator1}, #{entity.opTime2}, #{entity.operator2}, #{entity.opTime3}, #{entity.operator3})
+        </foreach>
+        on duplicate key update
+         position = values(position) , node = values(node) , xy_type = values(xy_type) , type = values(type) , level = values(level) , type_no = values(type_no) , content = values(content) , time = values(time) , state = values(state) , remark1 = values(remark1) , remark2 = values(remark2) , remark3 = values(remark3) , op_time1 = values(op_time1) , operator1 = values(operator1) , op_time2 = values(op_time2) , operator2 = values(operator2) , op_time3 = values(op_time3) , operator3 = values(operator3)     </insert>
+    <select id="selectListJoin" parameterType="com.example.damcurvity.que.InfoAlertQue" resultType="com.example.damcurvity.vo.InfoStationNodeVO">
+        select ai.* from alert_info ai
+        left join base_station bs on bs.name=ai.position
+        left join base_equipment be on be.id = bs.monitor_equ_id
+        <where>
+            <if test="infoAlertQue.equId != null">AND be.id = #{infoAlertQue.equId}</if>
+            <if test="infoAlertQue.startTime != null">AND ai.time >= #{infoAlertQue.startTime}</if>
+            <if test="infoAlertQue.endTime != null">AND ai.time &lt;= #{infoAlertQue.endTime}</if>
+            <if test="infoAlertQue.node != null">AND ai.node = #{infoAlertQue.node}</if>
+            <if test="infoAlertQue.xyType != null">AND ai.xy_type = #{infoAlertQue.xyType}</if>
+            <if test="infoAlertQue.stationId != null">AND bs.id = #{infoAlertQue.stationId}</if>
+            <if test="infoAlertQue.state != null">AND ai.state = #{infoAlertQue.state}</if>
+        </where>
+        order by time desc
+    </select>
+</mapper>
+

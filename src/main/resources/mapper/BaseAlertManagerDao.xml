@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.damcurvity.dao.BaseAlertManagerDao">
+
+    <resultMap type="com.example.damcurvity.entity.BaseAlertManager" id="BaseAlertManagerMap">
+        <result property="id" column="id" jdbcType="INTEGER"/>
+        <result property="stationId" column="station_id" jdbcType="INTEGER"/>
+        <result property="monitorValType" column="monitor_val_type" jdbcType="VARCHAR"/>
+        <result property="monitorType" column="monitor_type" jdbcType="INTEGER"/>
+        <result property="blue1" column="blue1" jdbcType="NUMERIC"/>
+        <result property="yellow1" column="yellow1" jdbcType="NUMERIC"/>
+        <result property="orange1" column="orange1" jdbcType="NUMERIC"/>
+        <result property="red1" column="red1" jdbcType="NUMERIC"/>
+        <result property="blue2" column="blue2" jdbcType="NUMERIC"/>
+        <result property="yellow2" column="yellow2" jdbcType="NUMERIC"/>
+        <result property="orange2" column="orange2" jdbcType="NUMERIC"/>
+        <result property="red2" column="red2" jdbcType="NUMERIC"/>
+        <result property="createTime" column="create_time" jdbcType="VARCHAR"/>
+        <result property="operator" column="operator" jdbcType="VARCHAR"/>
+        <result property="blue11" column="blue11" jdbcType="NUMERIC"/>
+        <result property="yellow11" column="yellow11" jdbcType="NUMERIC"/>
+        <result property="orange11" column="orange11" jdbcType="NUMERIC"/>
+        <result property="red11" column="red11" jdbcType="NUMERIC"/>
+        <result property="blue22" column="blue22" jdbcType="NUMERIC"/>
+        <result property="yellow22" column="yellow22" jdbcType="NUMERIC"/>
+        <result property="orange22" column="orange22" jdbcType="NUMERIC"/>
+        <result property="red22" column="red22" jdbcType="NUMERIC"/>
+    </resultMap>
+
+    <!-- 批量插入 -->
+    <insert id="insertBatch" keyProperty="id" useGeneratedKeys="true">
+        insert into damcurvitydb.base_alert_manager(station_id, monitor_val_type, monitor_type, blue1, yellow1, orange1, red1, blue2, yellow2, orange2, red2, create_time, operator, blue11, yellow11, orange11, red11, blue22, yellow22, orange22, red22)
+        values
+        <foreach collection="entities" item="entity" separator=",">
+        (#{entity.stationId}, #{entity.monitorValType}, #{entity.monitorType}, #{entity.blue1}, #{entity.yellow1}, #{entity.orange1}, #{entity.red1}, #{entity.blue2}, #{entity.yellow2}, #{entity.orange2}, #{entity.red2}, #{entity.createTime}, #{entity.operator}, #{entity.blue11}, #{entity.yellow11}, #{entity.orange11}, #{entity.red11}, #{entity.blue22}, #{entity.yellow22}, #{entity.orange22}, #{entity.red22})
+        </foreach>
+    </insert>
+    <!-- 批量插入或按主键更新 -->
+    <insert id="insertOrUpdateBatch" keyProperty="id" useGeneratedKeys="true">
+        insert into damcurvitydb.base_alert_manager(station_id, monitor_val_type, monitor_type, blue1, yellow1, orange1, red1, blue2, yellow2, orange2, red2, create_time, operator, blue11, yellow11, orange11, red11, blue22, yellow22, orange22, red22)
+        values
+        <foreach collection="entities" item="entity" separator=",">
+            (#{entity.stationId}, #{entity.monitorValType}, #{entity.monitorType}, #{entity.blue1}, #{entity.yellow1}, #{entity.orange1}, #{entity.red1}, #{entity.blue2}, #{entity.yellow2}, #{entity.orange2}, #{entity.red2}, #{entity.createTime}, #{entity.operator}, #{entity.blue11}, #{entity.yellow11}, #{entity.orange11}, #{entity.red11}, #{entity.blue22}, #{entity.yellow22}, #{entity.orange22}, #{entity.red22})
+        </foreach>
+        on duplicate key update
+         station_id = values(station_id) , monitor_val_type = values(monitor_val_type) , monitor_type = values(monitor_type) , blue1 = values(blue1) , yellow1 = values(yellow1) , orange1 = values(orange1) , red1 = values(red1) , blue2 = values(blue2) , yellow2 = values(yellow2) , orange2 = values(orange2) , red2 = values(red2) , create_time = values(create_time) , operator = values(operator) , blue11 = values(blue11) , yellow11 = values(yellow11) , orange11 = values(orange11) , red11 = values(red11) , blue22 = values(blue22) , yellow22 = values(yellow22) , orange22 = values(orange22) , red22 = values(red22)     </insert>
+
+</mapper>
+

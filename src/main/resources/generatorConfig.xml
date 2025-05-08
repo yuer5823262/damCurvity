@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+    <classPathEntry
+            location="C:\Users\91036\.m2\repository\mysql\mysql-connector-java\8.0.27\mysql-connector-java-8.0.27.jar"/>
+    <context id="mysqlTables" targetRuntime="MyBatis3">
+        <property name="autoDelimitKeywords" value="true" />
+        <!--可以使用``包括字段名，避免字段名与sql保留字冲突报错-->
+        <property name="beginningDelimiter" value="`"/>
+        <property name="endingDelimiter" value="`"/>
+        <property name="nullCatalogMeansCurrent" value="true"/>
+        <!-- optional，旨在创建class时，对注释进行控制-->
+        <commentGenerator>
+
+            <property name="suppressDate" value="false"/>
+            <property name="suppressAllComments" value="true"/>
+        </commentGenerator>
+
+        <jdbcConnection driverClass="com.mysql.cj.jdbc.Driver"
+                        connectionURL="jdbc:mysql://39.107.204.26:3306/dampourdb?useUnicode=true" userId="root"
+                        password="dam_dam5000"/>
+
+
+
+
+        <javaModelGenerator targetPackage="com.example.damcurvity.model.pojo"
+                            targetProject="src/main/java">
+            <property name="immutable" value="false"/>
+            <property name="enableSubPackages" value="true"/>
+            <property name="trimStrings" value="true"/>
+        </javaModelGenerator>
+
+        <sqlMapGenerator targetPackage="mappers"
+                         targetProject="src/main/resources">
+            <property name="enableSubPackages" value="true"/>
+        </sqlMapGenerator>
+
+        <javaClientGenerator targetPackage="com.example.damcurvity.model.dao"
+                             targetProject="src/main/java" type="XMLMAPPER">
+            <property name="enableSubPackages" value="true"/>
+        </javaClientGenerator>
+
+        <javaServiceGenerator targetPackage="com.example.damcurvity.service" targetProject="src/main/java"
+                              implementationPackage="com.example.damcurvity.service.impl" >
+            <property name="enableSubPackages" value="true"/>
+        </javaServiceGenerator>
+
+        <javaControllerGenerator targetPackage="com.example.damcurvity.controller" targetProject="src/main/java">
+            <property name="enableSubPackages" value="true"/>
+        </javaControllerGenerator>
+
+        <table tableName="dam_segment" domainObjectName="DamSegment" enableCountByExample="true" enableUpdateByExample="true"
+               enableDeleteByExample="true" enableSelectByExample="true" selectByExampleQueryId="false"/>
+<!--        <table tableName="dam_segment" domainObjectName="DamSegment"-->
+<!--               enableCountByExample="false" enableUpdateByExample="false"-->
+<!--               enableDeleteByExample="false" enableSelectByExample="false"-->
+<!--               selectByExampleQueryId="false">-->
+<!--        </table>-->
+    </context>
+</generatorConfiguration>

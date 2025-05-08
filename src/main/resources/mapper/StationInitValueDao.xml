@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.damcurvity.dao.StationInitValueDao">
+
+    <resultMap type="com.example.damcurvity.entity.StationInitValue" id="StationInitValueMap">
+        <result property="id" column="id" jdbcType="INTEGER"/>
+        <result property="stationId" column="station_id" jdbcType="INTEGER"/>
+        <result property="nodeId" column="node_id" jdbcType="INTEGER"/>
+        <result property="time" column="time" jdbcType="TIMESTAMP"/>
+        <result property="xVal" column="x_val" jdbcType="NUMERIC"/>
+        <result property="yVal" column="y_val" jdbcType="NUMERIC"/>
+        <result property="zVal" column="z_val" jdbcType="NUMERIC"/>
+        <result property="xAcc" column="x_acc" jdbcType="NUMERIC"/>
+        <result property="yAcc" column="y_acc" jdbcType="NUMERIC"/>
+        <result property="zAcc" column="z_acc" jdbcType="NUMERIC"/>
+        <result property="voltage" column="voltage" jdbcType="NUMERIC"/>
+        <result property="temp" column="temp" jdbcType="NUMERIC"/>
+        <result property="angle" column="angle" jdbcType="NUMERIC"/>
+        <result property="state" column="state" jdbcType="INTEGER"/>
+        <result property="mark" column="mark" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <!-- 批量插入 -->
+    <insert id="insertBatch" keyProperty="id" useGeneratedKeys="true">
+        insert into damcurvitydb.station_init_value(station_id, node_id, time, x_val, y_val, z_val, x_acc, y_acc, z_acc, voltage, temp, angle, state, mark)
+        values
+        <foreach collection="entities" item="entity" separator=",">
+        (#{entity.stationId}, #{entity.nodeId}, #{entity.time}, #{entity.xVal}, #{entity.yVal}, #{entity.zVal}, #{entity.xAcc}, #{entity.yAcc}, #{entity.zAcc}, #{entity.voltage}, #{entity.temp}, #{entity.angle}, #{entity.state}, #{entity.mark})
+        </foreach>
+    </insert>
+    <!-- 批量插入或按主键更新 -->
+    <insert id="insertOrUpdateBatch" keyProperty="id" useGeneratedKeys="true">
+        insert into damcurvitydb.station_init_value(station_id, node_id, time, x_val, y_val, z_val, x_acc, y_acc, z_acc, voltage, temp, angle, state, mark)
+        values
+        <foreach collection="entities" item="entity" separator=",">
+            (#{entity.stationId}, #{entity.nodeId}, #{entity.time}, #{entity.xVal}, #{entity.yVal}, #{entity.zVal}, #{entity.xAcc}, #{entity.yAcc}, #{entity.zAcc}, #{entity.voltage}, #{entity.temp}, #{entity.angle}, #{entity.state}, #{entity.mark})
+        </foreach>
+        on duplicate key update
+         station_id = values(station_id) , node_id = values(node_id) , time = values(time) , x_val = values(x_val) , y_val = values(y_val) , z_val = values(z_val) , x_acc = values(x_acc) , y_acc = values(y_acc) , z_acc = values(z_acc) , voltage = values(voltage) , temp = values(temp) , angle = values(angle) , state = values(state) , mark = values(mark)     </insert>
+
+</mapper>
+

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.damcurvity.dao.BaseEquipmentDao">
+
+    <resultMap type="com.example.damcurvity.entity.BaseEquipment" id="BaseEquipmentMap">
+        <result property="id" column="id" jdbcType="INTEGER"/>
+        <result property="acquId" column="acqu_id" jdbcType="INTEGER"/>
+        <result property="type" column="type" jdbcType="VARCHAR"/>
+        <result property="name" column="name" jdbcType="VARCHAR"/>
+        <result property="manufacturer" column="manufacturer" jdbcType="VARCHAR"/>
+        <result property="monitorType" column="monitor_type" jdbcType="VARCHAR"/>
+        <result property="gatherType" column="gather_type" jdbcType="VARCHAR"/>
+        <result property="hidden" column="hidden" jdbcType="INTEGER"/>
+        <result property="serialNumber" column="serial_number" jdbcType="VARCHAR"/>
+        <result property="lossThreshold" column="loss_threshold" jdbcType="NUMERIC"/>
+        <result property="volThreshold" column="vol_threshold" jdbcType="NUMERIC"/>
+        <result property="firmwareVersion" column="firmware_version" jdbcType="VARCHAR"/>
+        <result property="computeMode" column="compute_mode" jdbcType="VARCHAR"/>
+        <result property="arrangementMode" column="arrangement_mode" jdbcType="VARCHAR"/>
+        <result property="equation" column="equation" jdbcType="VARCHAR"/>
+        <result property="deformationAzimuth" column="deformation_azimuth" jdbcType="NUMERIC"/>
+        <result property="markAzimuth" column="mark_azimuth" jdbcType="NUMERIC"/>
+        <result property="netId" column="net_id" jdbcType="VARCHAR"/>
+        <result property="createTime" column="create_time" jdbcType="VARCHAR"/>
+        <result property="operator" column="operator" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <!-- 批量插入 -->
+    <insert id="insertBatch" keyProperty="id" useGeneratedKeys="true">
+        insert into damcurvitydb.base_equipment(acqu_id, type, name, manufacturer, monitor_type, gather_type, hidden, serial_number, loss_threshold, vol_threshold, firmware_version, compute_mode, arrangement_mode, equation, deformation_azimuth, mark_azimuth, net_id, create_time, operator)
+        values
+        <foreach collection="entities" item="entity" separator=",">
+        (#{entity.acquId}, #{entity.type}, #{entity.name}, #{entity.manufacturer}, #{entity.monitorType}, #{entity.gatherType}, #{entity.hidden}, #{entity.serialNumber}, #{entity.lossThreshold}, #{entity.volThreshold}, #{entity.firmwareVersion}, #{entity.computeMode}, #{entity.arrangementMode}, #{entity.equation}, #{entity.deformationAzimuth}, #{entity.markAzimuth}, #{entity.netId}, #{entity.createTime}, #{entity.operator})
+        </foreach>
+    </insert>
+    <!-- 批量插入或按主键更新 -->
+    <insert id="insertOrUpdateBatch" keyProperty="id" useGeneratedKeys="true">
+        insert into damcurvitydb.base_equipment(acqu_id, type, name, manufacturer, monitor_type, gather_type, hidden, serial_number, loss_threshold, vol_threshold, firmware_version, compute_mode, arrangement_mode, equation, deformation_azimuth, mark_azimuth, net_id, create_time, operator)
+        values
+        <foreach collection="entities" item="entity" separator=",">
+            (#{entity.acquId}, #{entity.type}, #{entity.name}, #{entity.manufacturer}, #{entity.monitorType}, #{entity.gatherType}, #{entity.hidden}, #{entity.serialNumber}, #{entity.lossThreshold}, #{entity.volThreshold}, #{entity.firmwareVersion}, #{entity.computeMode}, #{entity.arrangementMode}, #{entity.equation}, #{entity.deformationAzimuth}, #{entity.markAzimuth}, #{entity.netId}, #{entity.createTime}, #{entity.operator})
+        </foreach>
+        on duplicate key update
+         acqu_id = values(acqu_id) , type = values(type) , name = values(name) , manufacturer = values(manufacturer) , monitor_type = values(monitor_type) , gather_type = values(gather_type) , hidden = values(hidden) , serial_number = values(serial_number) , loss_threshold = values(loss_threshold) , vol_threshold = values(vol_threshold) , firmware_version = values(firmware_version) , compute_mode = values(compute_mode) , arrangement_mode = values(arrangement_mode) , equation = values(equation) , deformation_azimuth = values(deformation_azimuth) , mark_azimuth = values(mark_azimuth) , net_id = values(net_id) , create_time = values(create_time) , operator = values(operator)     </insert>
+    <select id="selectListJoin" resultType="com.example.damcurvity.vo.BaseEquipmentVO" parameterType="com.example.damcurvity.entity.BaseEquipment">
+        SELECT be.id AS id, be.acqu_id AS acquId, bae.name AS acquName, be.type AS type, be.name AS name,
+               be.manufacturer AS manufacturer, be.monitor_type AS monitorType, be.gather_type AS gatherType,
+               be.hidden AS hidden, be.serial_number AS serialNumber, be.loss_threshold AS lossThreshold,
+               be.vol_threshold AS volThreshold, be.firmware_version AS firmwareVersion, be.compute_mode AS computeMode,
+               be.arrangement_mode AS arrangementMode, be.equation AS equation, be.deformation_azimuth AS deformationAzimuth,
+               be.mark_azimuth AS markAzimuth, be.net_id AS netId, be.create_time AS createTime, be.operator AS operator
+        FROM base_equipment be
+        left join base_acquisition_equ bae on bae.id = be.acqu_id
+        <where>
+            <if test="baseEquipment.id != null">AND be.id = #{baseEquipment.id}</if>
+            <if test="baseEquipment.name != null">AND be.name = #{baseEquipment.name}</if>
+            <if test="baseEquipment.serialNumber != null">AND be.serial_number = #{baseEquipment.serialNumber}</if>
+        </where>
+    </select>
+</mapper>
+

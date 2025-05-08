@@ -1,0 +1,31 @@
+
+
+server:
+        port: 8010
+        servlet:
+          context-path: /damCurvity
+
+spring:
+  servlet:
+    multipart:
+      max-file-size: 10MB
+  jpa:
+    show-sql: true
+
+  datasource:
+                driver-class-name: com.mysql.cj.jdbc.Driver
+                username: root
+                password: dam_dam5000
+                url: jdbc:mysql://123.56.106.48:3306/damcurvitydb?useUnicode=true
+#                url: jdbc:mysql://127.0.0.1:3306/damcurvitydb?useUnicode=true
+
+logging:
+  config: classpath:log4j2.xml
+
+
+mybatis-plus:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.example.damcurvity.entity
+  configuration:
+    #驼峰命名规则
+    map-underscore-to-camel-case: true

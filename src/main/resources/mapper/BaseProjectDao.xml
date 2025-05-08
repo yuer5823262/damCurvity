@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.damcurvity.dao.BaseProjectDao">
+
+    <resultMap type="com.example.damcurvity.entity.BaseProject" id="BaseProjectMap">
+        <result property="id" column="id" jdbcType="INTEGER"/>
+        <result property="name" column="name" jdbcType="VARCHAR"/>
+        <result property="info" column="info" jdbcType="VARCHAR"/>
+        <result property="addr" column="addr" jdbcType="VARCHAR"/>
+        <result property="longitudeLatitude" column="longitude_latitude" jdbcType="VARCHAR"/>
+        <result property="imgName" column="img_name" jdbcType="VARCHAR"/>
+        <result property="monitor" column="monitor" jdbcType="INTEGER"/>
+        <result property="createTime" column="create_time" jdbcType="VARCHAR"/>
+        <result property="operator" column="operator" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <!-- 批量插入 -->
+    <insert id="insertBatch" keyProperty="id" useGeneratedKeys="true">
+        insert into damcurvitydb.base_project(name, info, addr, longitude_latitude, img_name, monitor, create_time, operator)
+        values
+        <foreach collection="entities" item="entity" separator=",">
+        (#{entity.name}, #{entity.info}, #{entity.addr}, #{entity.longitudeLatitude}, #{entity.imgName}, #{entity.monitor}, #{entity.createTime}, #{entity.operator})
+        </foreach>
+    </insert>
+    <!-- 批量插入或按主键更新 -->
+    <insert id="insertOrUpdateBatch" keyProperty="id" useGeneratedKeys="true">
+        insert into damcurvitydb.base_project(name, info, addr, longitude_latitude, img_name, monitor, create_time, operator)
+        values
+        <foreach collection="entities" item="entity" separator=",">
+            (#{entity.name}, #{entity.info}, #{entity.addr}, #{entity.longitudeLatitude}, #{entity.imgName}, #{entity.monitor}, #{entity.createTime}, #{entity.operator})
+        </foreach>
+        on duplicate key update
+         name = values(name) , info = values(info) , addr = values(addr) , longitude_latitude = values(longitude_latitude) , img_name = values(img_name) , monitor = values(monitor) , create_time = values(create_time) , operator = values(operator)     </insert>
+
+</mapper>
+

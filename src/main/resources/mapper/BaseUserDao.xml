@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.damcurvity.dao.BaseUserDao">
+
+    <resultMap type="com.example.damcurvity.entity.BaseUser" id="BaseUserMap">
+        <result property="id" column="id" jdbcType="INTEGER"/>
+        <result property="username" column="username" jdbcType="VARCHAR"/>
+        <result property="name" column="name" jdbcType="VARCHAR"/>
+        <result property="pwd" column="pwd" jdbcType="VARCHAR"/>
+        <result property="gender" column="gender" jdbcType="INTEGER"/>
+        <result property="organization" column="organization" jdbcType="VARCHAR"/>
+        <result property="department" column="department" jdbcType="VARCHAR"/>
+        <result property="position" column="position" jdbcType="VARCHAR"/>
+        <result property="phone" column="phone" jdbcType="VARCHAR"/>
+        <result property="type" column="type" jdbcType="INTEGER"/>
+        <result property="role" column="Role" jdbcType="INTEGER"/>
+        <result property="createTime" column="create_time" jdbcType="VARCHAR"/>
+        <result property="operator" column="operator" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <!-- 批量插入 -->
+    <insert id="insertBatch" keyProperty="id" useGeneratedKeys="true">
+        insert into damcurvitydb.base_user(username, name, pwd, gender, organization, department, position, phone, type, Role, create_time, operator)
+        values
+        <foreach collection="entities" item="entity" separator=",">
+        (#{entity.username}, #{entity.name}, #{entity.pwd}, #{entity.gender}, #{entity.organization}, #{entity.department}, #{entity.position}, #{entity.phone}, #{entity.type}, #{entity.role}, #{entity.createTime}, #{entity.operator})
+        </foreach>
+    </insert>
+    <!-- 批量插入或按主键更新 -->
+    <insert id="insertOrUpdateBatch" keyProperty="id" useGeneratedKeys="true">
+        insert into damcurvitydb.base_user(username, name, pwd, gender, organization, department, position, phone, type, Role, create_time, operator)
+        values
+        <foreach collection="entities" item="entity" separator=",">
+            (#{entity.username}, #{entity.name}, #{entity.pwd}, #{entity.gender}, #{entity.organization}, #{entity.department}, #{entity.position}, #{entity.phone}, #{entity.type}, #{entity.role}, #{entity.createTime}, #{entity.operator})
+        </foreach>
+        on duplicate key update
+         username = values(username) , name = values(name) , pwd = values(pwd) , gender = values(gender) , organization = values(organization) , department = values(department) , position = values(position) , phone = values(phone) , type = values(type) , Role = values(Role) , create_time = values(create_time) , operator = values(operator)     </insert>
+
+</mapper>
+

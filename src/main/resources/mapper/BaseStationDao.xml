@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.damcurvity.dao.BaseStationDao">
+
+    <resultMap type="com.example.damcurvity.entity.BaseStation" id="BaseStationMap">
+        <result property="id" column="id" jdbcType="INTEGER"/>
+        <result property="name" column="name" jdbcType="VARCHAR"/>
+        <result property="projectMonitorId" column="project_monitor_id" jdbcType="INTEGER"/>
+        <result property="imgName" column="img_name" jdbcType="VARCHAR"/>
+        <result property="monitorEquId" column="monitor_equ_id" jdbcType="INTEGER"/>
+        <result property="isGetLocation" column="is_get_location" jdbcType="INTEGER"/>
+        <result property="isAlert" column="is_alert" jdbcType="INTEGER"/>
+        <result property="jg" column="jg" jdbcType="INTEGER"/>
+        <result property="equDirection" column="equ_direction" jdbcType="VARCHAR"/>
+        <result property="verticalLabel" column="vertical_label" jdbcType="VARCHAR"/>
+        <result property="refElevation" column="ref_elevation" jdbcType="NUMERIC"/>
+        <result property="coordinateLabel" column="coordinate_label" jdbcType="VARCHAR"/>
+        <result property="diagramLeft" column="diagram_left" jdbcType="VARCHAR"/>
+        <result property="diagramRight" column="diagram_right" jdbcType="VARCHAR"/>
+        <result property="state" column="state" jdbcType="INTEGER"/>
+        <result property="createTime" column="create_time" jdbcType="VARCHAR"/>
+        <result property="operator" column="operator" jdbcType="VARCHAR"/>
+        <result property="diagramLeftLeftMark" column="diagram_left_left_mark" jdbcType="VARCHAR"/>
+        <result property="diagramLeftRightMark" column="diagram_left_right_mark" jdbcType="VARCHAR"/>
+        <result property="diagramRightLeftMark" column="diagram_right_left_mark" jdbcType="VARCHAR"/>
+        <result property="diagramRightRightMark" column="diagram_right_right_mark" jdbcType="VARCHAR"/>
+        <result property="trajectoryLeftMark" column="trajectory_left_mark" jdbcType="VARCHAR"/>
+        <result property="trajectoryRightMark" column="trajectory_right_mark" jdbcType="VARCHAR"/>
+        <result property="exceptionScreeningInterval" column="exception_screening_interval" jdbcType="INTEGER"/>
+        <result property="confidenceInterval" column="confidence_interval" jdbcType="INTEGER"/>
+        <result property="filterInterval" column="filter_interval" jdbcType="INTEGER"/>
+        <result property="filterLevel" column="filter_level" jdbcType="INTEGER"/>
+        <result property="longitudeLatitude" column="longitude_latitude" jdbcType="VARCHAR"/>
+        <result property="damPosition" column="dam_position" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <!-- 批量插入 -->
+    <insert id="insertBatch" keyProperty="id" useGeneratedKeys="true">
+        insert into damcurvitydb.base_station(name, project_monitor_id, img_name, monitor_equ_id, is_get_location, is_alert, jg, equ_direction, vertical_label, ref_elevation, coordinate_label, diagram_left, diagram_right, state, create_time, operator, diagram_left_left_mark, diagram_left_right_mark, diagram_right_left_mark, diagram_right_right_mark, trajectory_left_mark, trajectory_right_mark, exception_screening_interval, confidence_interval, filter_interval, filter_level, longitude_latitude, dam_position)
+        values
+        <foreach collection="entities" item="entity" separator=",">
+        (#{entity.name}, #{entity.projectMonitorId}, #{entity.imgName}, #{entity.monitorEquId}, #{entity.isGetLocation}, #{entity.isAlert}, #{entity.jg}, #{entity.equDirection}, #{entity.verticalLabel}, #{entity.refElevation}, #{entity.coordinateLabel}, #{entity.diagramLeft}, #{entity.diagramRight}, #{entity.state}, #{entity.createTime}, #{entity.operator}, #{entity.diagramLeftLeftMark}, #{entity.diagramLeftRightMark}, #{entity.diagramRightLeftMark}, #{entity.diagramRightRightMark}, #{entity.trajectoryLeftMark}, #{entity.trajectoryRightMark}, #{entity.exceptionScreeningInterval}, #{entity.confidenceInterval}, #{entity.filterInterval}, #{entity.filterLevel}, #{entity.longitudeLatitude}, #{entity.damPosition})
+        </foreach>
+    </insert>
+    <!-- 批量插入或按主键更新 -->
+    <insert id="insertOrUpdateBatch" keyProperty="id" useGeneratedKeys="true">
+        insert into damcurvitydb.base_station(name, project_monitor_id, img_name, monitor_equ_id, is_get_location, is_alert, jg, equ_direction, vertical_label, ref_elevation, coordinate_label, diagram_left, diagram_right, state, create_time, operator, diagram_left_left_mark, diagram_left_right_mark, diagram_right_left_mark, diagram_right_right_mark, trajectory_left_mark, trajectory_right_mark, exception_screening_interval, confidence_interval, filter_interval, filter_level, longitude_latitude, dam_position)
+        values
+        <foreach collection="entities" item="entity" separator=",">
+            (#{entity.name}, #{entity.projectMonitorId}, #{entity.imgName}, #{entity.monitorEquId}, #{entity.isGetLocation}, #{entity.isAlert}, #{entity.jg}, #{entity.equDirection}, #{entity.verticalLabel}, #{entity.refElevation}, #{entity.coordinateLabel}, #{entity.diagramLeft}, #{entity.diagramRight}, #{entity.state}, #{entity.createTime}, #{entity.operator}, #{entity.diagramLeftLeftMark}, #{entity.diagramLeftRightMark}, #{entity.diagramRightLeftMark}, #{entity.diagramRightRightMark}, #{entity.trajectoryLeftMark}, #{entity.trajectoryRightMark}, #{entity.exceptionScreeningInterval}, #{entity.confidenceInterval}, #{entity.filterInterval}, #{entity.filterLevel}, #{entity.longitudeLatitude}, #{entity.damPosition})
+        </foreach>
+        on duplicate key update
+         name = values(name) , project_monitor_id = values(project_monitor_id) , img_name = values(img_name) , monitor_equ_id = values(monitor_equ_id) , is_get_location = values(is_get_location) , is_alert = values(is_alert) , jg = values(jg) , equ_direction = values(equ_direction) , vertical_label = values(vertical_label) , ref_elevation = values(ref_elevation) , coordinate_label = values(coordinate_label) , diagram_left = values(diagram_left) , diagram_right = values(diagram_right) , state = values(state) , create_time = values(create_time) , operator = values(operator) , diagram_left_left_mark = values(diagram_left_left_mark) , diagram_left_right_mark = values(diagram_left_right_mark) , diagram_right_left_mark = values(diagram_right_left_mark) , diagram_right_right_mark = values(diagram_right_right_mark) , trajectory_left_mark = values(trajectory_left_mark) , trajectory_right_mark = values(trajectory_right_mark) , exception_screening_interval = values(exception_screening_interval) , confidence_interval = values(confidence_interval) , filter_interval = values(filter_interval) , filter_level = values(filter_level) , longitude_latitude = values(longitude_latitude) , dam_position = values(dam_position)     </insert>
+    <select id="selectListJoin" resultType="com.example.damcurvity.vo.BaseStationVO" parameterType="com.example.damcurvity.entity.BaseStation">
+        SELECT
+        bs.id AS id,
+        bs.NAME AS NAME,
+        bs.longitude_latitude as longitudeLatitude,
+        bs.dam_position as damPosition,
+        project_monitor_id AS projectMonitorId,
+        img_name AS imgName,
+        monitor_equ_id AS monitorEquId,
+        bse.id as monitorEquId,
+        bse.NAME AS equName,
+        bae.id as cjqId,
+        bae.NAME AS cjqName,
+        is_get_location AS isGetLocation,
+        is_alert AS isAlert,
+        jg AS jg,
+        state AS state,
+        bs.create_time AS createTime,
+        bs.operator AS operator
+        FROM
+        base_station bs
+        LEFT JOIN base_equipment bse ON bs.monitor_equ_id = bse.id
+        LEFT JOIN base_acquisition_equ bae ON bse.acqu_id = bae.id
+        <where>
+            <if test="baseStation.id != null">AND bs.id = #{baseStation.id}</if>
+            <if test="baseStation.name != null">AND bs.name = #{baseStation.name}</if>
+        </where>
+    </select>
+    <select id="getReportSheet" resultType="com.example.damcurvity.vo.ReportSheet">
+        SELECT
+            tm1.node_id as nodeId,tm1.z_val/100 as gc,tm1.x_val - tm2.x_val as xChange,tm1.x_val - siv.x_val as xChangeAll,(tm1.x_val - tm2.x_val)/#{interval} as xChangeRate,
+            tm1.y_val - tm2.y_val as yChange,tm1.y_val - siv.y_val as yChangeAll,(tm1.y_val - tm2.y_val)/#{interval} as yChangeRate
+        FROM
+            (
+                SELECT
+                    node_id,z_val,x_val,y_val
+                FROM
+                    info_staion_node_xz isn
+                WHERE station_id = #{stationId} AND time > LEFT ( #{startTime}, 10 ) AND time &lt;= (#{startTime} + INTERVAL 1 DAY)
+                GROUP BY node_id
+            ) tm1
+                LEFT JOIN (
+                SELECT
+                    node_id,z_val,x_val,y_val
+                FROM
+                    info_staion_node_xz isn
+                WHERE
+                    station_id = #{stationId} AND time > LEFT ( ( #{startTime} - INTERVAL #{interval} DAY ), 10 ) AND time &lt;= ( #{startTime} - INTERVAL #{interval} DAY + INTERVAL 1 DAY)
+        GROUP BY node_id
+            ) tm2 on tm2.node_id = tm1.node_id
+            LEFT JOIN station_init_value siv on siv.node_id = tm1.node_id
+    </select>
+    <select id="exportReport" resultType="com.example.damcurvity.excelVO.ReportExcelVO">
+        SELECT isn.node_id as node,
+        <if test="jg == 0">DATE_FORMAT(isn.time, '%Y-%m')</if>
+        <if test="jg == 1">DATE_FORMAT(isn.time, '%Y-%U')</if>
+        <if test="jg == 2">DATE_FORMAT(isn.time, '%Y-%m-%d %H')</if> AS nodeTime,
+               avg(isn.x_val) as xVal,
+               avg(isn.y_val) as yVal
+        from <if test="dataType == 0">info_station_node</if> <if test="dataType == 1">info_station_node_xz</if> isn
+        <where>
+            <if test="startTime != null">AND time >= #{startTime}</if>
+            <if test="endTime != null">AND time &lt;= #{endTime}</if>
+        </where>
+        GROUP BY isn.node_id,nodeTime
+
+    </select>
+</mapper>
+
